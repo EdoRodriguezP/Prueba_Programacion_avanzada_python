@@ -1,4 +1,4 @@
-# campaña.py
+
 # Definición de la clase Campaña y su lógica de composición
 from error import LargoExcedidoError
 from anuncio import Anuncio, Video, Display, Social
@@ -6,36 +6,33 @@ from anuncio import Anuncio, Video, Display, Social
 class Campaña:
     # Clase que representa una campaña publicitaria
     def __init__(self, nombre, anuncios_data, fecha_inicio=None, fecha_termino=None):
-        self.nombre = nombre
-        self.fecha_inicio = fecha_inicio
-        self.fecha_termino = fecha_termino
-        # Composición: crear anuncios a partir de la data recibida
+        self.__nombre = nombre
+        self.__fecha_inicio = fecha_inicio
+        self.__fecha_termino = fecha_termino
         self._anuncios = self._crear_anuncios(anuncios_data)
     @property
     def nombre(self):
-        return self._nombre
+        return self.__nombre
     @nombre.setter
     def nombre(self, value):
         # Validar largo del nombre
         if len(value) > 250:
             raise LargoExcedidoError("El nombre de la campaña supera los 250 caracteres.")
-        self._nombre = value
+        self.__nombre = value
 
     @property
     def fecha_inicio(self):
-        return self._fecha_inicio
+        return self.__fecha_inicio
     @fecha_inicio.setter
     def fecha_inicio(self, value):
-        # Asignación básica
-        self._fecha_inicio = value
+        self.__fecha_inicio = value
 
     @property
     def fecha_termino(self):
-        return self._fecha_termino
+        return self.__fecha_termino
     @fecha_termino.setter
     def fecha_termino(self, value):
-        # Asignación básica
-        self._fecha_termino = value
+        self.__fecha_termino = value
 
     @property
     def anuncios(self):

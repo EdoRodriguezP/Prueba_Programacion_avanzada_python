@@ -1,6 +1,6 @@
-# demo.py
+
 # Script de demostración para modificar atributos de una campaña y manejar excepciones
-from campaña import Campaña
+from campana import Campaña
 from error import LargoExcedidoError, SubTipoInvalidoError
 
 # Crear una campaña con un solo anuncio de tipo Video

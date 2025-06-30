@@ -9,8 +9,8 @@ class Anuncio(ABC):
         # Validación de ancho y alto
         self.ancho = ancho
         self.alto = alto
-        self.url_archivo = url_archivo
-        self.url_clic = url_clic
+        self.__url_archivo = url_archivo
+        self.__url_clic = url_clic
         self.sub_tipo = sub_tipo
 
     @property
@@ -31,19 +31,19 @@ class Anuncio(ABC):
 
     @property
     def url_archivo(self):
-        return self._url_archivo
+        return self.__url_archivo
     @url_archivo.setter
     def url_archivo(self, value):
-        # Asignación básica
-        self._url_archivo = value
+        
+        self.__url_archivo = value
 
     @property
     def url_clic(self):
-        return self._url_clic
+        return self.__url_clic
     @url_clic.setter
     def url_clic(self, value):
         # Asignación básica
-        self._url_clic = value
+        self.__url_clic = value
 
     @property
     def sub_tipo(self):
